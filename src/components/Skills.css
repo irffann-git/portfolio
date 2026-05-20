@@ -1,0 +1,219 @@
+/* ===============================
+   Modern Glassmorphism Skills UI
+================================= */
+
+.skills-section {
+  margin: 80px 0;
+}
+
+/* ===============================
+   FILTER BUTTONS
+================================= */
+
+.skill-filter {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+  margin-bottom: 40px;
+  padding-bottom: 10px;
+}
+
+.skill-filter::-webkit-scrollbar {
+  display: none;
+}
+
+.filter-btn {
+  position: relative;
+   background: linear-gradient(145deg, rgba(18, 18, 26, 0.9), rgba(12, 12, 18, 0.95));
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(212, 163, 115, 0.25);
+  /* backdrop-filter: blur(12px); */
+  color: var(--text-soft);
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  overflow: hidden;
+}
+
+/* Hover Glow */
+.filter-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(212, 163, 115, 0.18),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: 0.5s;
+}
+
+.filter-btn:hover::before {
+  transform: translateX(100%);
+}
+.filter-btn.active {
+  background: var(--accent-gold);
+  color: #111;
+  border-color: var(--accent-gold);
+}
+
+
+
+/* ===============================
+   SKILLS GRID
+================================= */
+
+.skills-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+
+
+/* ===============================
+   SKILL CHIP
+================================= */
+
+.skill-chip {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 14px 24px;
+
+  border-radius: 18px;
+
+   background: linear-gradient(145deg, rgba(18, 18, 26, 0.9), rgba(12, 12, 18, 0.95));
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(212, 163, 115, 0.15);
+
+  backdrop-filter: blur(12px);
+
+  color: var(--text-soft);
+
+  transition: all 0.25s ease;
+
+  overflow: hidden;
+
+  background: radial-gradient(
+    circle at top left,
+    rgba(212, 163, 115, 0.12),
+    transparent 20%
+  );
+  cursor: default;
+}
+
+/* Background Glow */
+.skill-chip::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top left,
+    rgba(212, 163, 115, 0.12),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.skill-chip:hover::before {
+  opacity: 1;
+}
+
+.skill-chip:hover {
+  transform: translateY(-2px);
+  border-color: rgba(212, 163, 115, 0.45);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+
+
+/* ===============================
+   ICON
+================================= */
+
+.skill-chip i {
+  font-size: 1.3rem;
+  color: var(--accent-gold);
+  transition: 0.3s;
+}
+
+.skill-chip:hover i {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+
+
+/* ===============================
+   TEXT
+================================= */
+
+.skill-name {
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+
+
+/* ===============================
+   MOBILE RESPONSIVE
+================================= */
+
+@media (max-width: 768px) {
+
+  .skills-cloud {
+    gap: 14px;
+  }
+
+  .skill-chip {
+    padding: 12px 18px;
+    gap: 10px;
+    border-radius: 14px;
+  }
+
+  .skill-chip i {
+    font-size: 1rem;
+  }
+
+  .skill-name {
+    font-size: 0.82rem;
+  }
+
+  .filter-btn {
+    padding: 9px 20px;
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .skills-cloud {
+    gap: 10px;
+  }
+
+  .skill-chip {
+    padding: 10px 14px;
+    border-radius: 12px;
+  }
+
+  .skill-name {
+    font-size: 0.75rem;
+  }
+
+  .filter-btn {
+    padding: 8px 16px;
+    font-size: 0.75rem;
+  }
+}

@@ -1,0 +1,425 @@
+/* WorkCarousel.css - Neon Core Edition */
+/* Futuristic content side with animated underline, hologram bar, GitHub button */
+
+.works-swiper {
+  width: 100%;
+  padding: clamp(1rem, 4vw, 2rem) 0 clamp(2rem, 8vw, 4rem);
+  margin: 1.5rem 0 2rem;
+  position: relative;
+}
+
+.works-swiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  height: auto;
+}
+
+/* Neon Core Card – dark with subtle border pulse */
+.neoncore-card {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: min(1150px, 90vw);
+  width: 100%;
+  margin: 0 auto;
+  background: #0a0a0f;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 40px -20px #000;
+  border: 1px solid rgba(212,163,115,0.2);
+  transition: border-color 0.2s;
+}
+
+.neoncore-card:hover {
+  border-color: rgba(212,163,115,0.6);
+}
+
+/* Image side – with scanline effect */
+.neoncore-image {
+  flex: 1.1;
+  min-width: clamp(220px, 30%, 320px);
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
+
+.neoncore-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: filter 0.3s;
+}
+
+.scanline {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(212,163,115,0.15), transparent);
+  pointer-events: none;
+  z-index: 2;
+  transition: left 0.5s;
+}
+
+.neoncore-card:hover .scanline {
+  left: 100%;
+}
+
+.neoncore-label {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-family: 'Courier New', monospace;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(4px);
+  color: var(--accent-gold);
+  padding: 4px 14px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-radius: 20px;
+  z-index: 3;
+  border-left: 2px solid var(--accent-gold);
+}
+
+/* CONTENT SIDE – FUTURISTIC FOCUS */
+.neoncore-content {
+  flex: 1;
+  padding: clamp(1.2rem, 4vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(145deg, rgba(18, 18, 26, 0.9), rgba(12, 12, 18, 0.95));
+  backdrop-filter: blur(2px);
+  position: relative;
+}
+
+/* Animated glowing underline on title */
+.content-header {
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+}
+
+.neoncore-content h3 {
+  font-size: clamp(1.4rem, 5vw, 2.2rem);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+  color: #fff;
+  letter-spacing: -0.5px;
+  text-shadow: 0 0 2px rgba(212,163,115,0.3);
+}
+
+.glow-underline {
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-gold), transparent);
+  transition: width 0.3s;
+}
+
+.neoncore-card:hover .glow-underline {
+  width: 100%;
+}
+
+/* Badge – with blinking cursor effect */
+.neoncore-badge {
+  color: var(--accent-gold);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.7rem;
+  margin: 0.8rem 0 1rem;
+  display: inline-block;
+  width: fit-content;
+  padding: 2px 10px;
+  background: rgba(212,163,115,0.1);
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+}
+
+.neoncore-badge::after {
+  content: '_';
+  opacity: 1;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Description text – with glitch effect on hover */
+.neoncore-desc {
+  color: var(--text-soft);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  transition: all 0.2s;
+}
+
+.neoncore-card:hover .neoncore-desc {
+  text-shadow: 0 0 1px rgba(212,163,115,0.3);
+}
+
+/* Tech tags – futuristic capsules */
+.neoncore-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 1rem 0 1.5rem;
+}
+
+.neoncore-tech span {
+  background: rgba(20,20,30,0.8);
+  backdrop-filter: blur(4px);
+  padding: 4px 14px;
+  border-radius: 40px;
+  font-size: 0.75rem;
+  font-family: 'Courier New', monospace;
+  color: #b1b1cf;
+  border: 1px solid rgba(212,163,115,0.2);
+  transition: all 0.2s;
+  position: relative;
+}
+
+.neoncore-tech span:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+  transform: translateY(-1px);
+}
+
+/* Action buttons – EXPLORE + GITHUB */
+.neoncore-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin: 5px 0 10px;
+}
+
+.btn-neoncore {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: var(--accent-gold);
+  padding: 8px 22px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border: 1px solid var(--accent-gold);
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-neoncore span {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-neoncore::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(212,163,115,0.3), transparent);
+  transition: left 0.3s;
+}
+
+.btn-neoncore:hover::before {
+  left: 100%;
+}
+
+.btn-neoncore:hover {
+  background: var(--accent-gold);
+  color: #0f0f14;
+  gap: 14px;
+}
+
+/* GitHub button – specific style */
+.btn-github {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #181822;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  border: 1px solid rgba(212,163,115,0.3);
+}
+
+.btn-github i {
+  font-size: 1rem;
+  color: var(--accent-gold);
+}
+
+.btn-github:hover {
+  background: var(--accent-gold);
+  color: #0f0f14;
+  border-color: var(--accent-gold);
+  transform: translateY(-2px);
+}
+
+.btn-github:hover i {
+  color: #0f0f14;
+}
+
+.password-neoncore {
+  background: rgba(212,163,115,0.08);
+  padding: 5px 14px;
+  border-radius: 40px;
+  font-size: 0.7rem;
+  font-family: monospace;
+  color: var(--accent-gold);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px dashed rgba(212,163,115,0.4);
+}
+
+/* Hologram progress bar (decorative) */
+.hologram-bar {
+  margin-top: 15px;
+  width: 100%;
+  height: 2px;
+  background: rgba(212,163,115,0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.hologram-fill {
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-gold), transparent);
+  transition: width 0.4s;
+}
+
+.neoncore-card:hover .hologram-fill {
+  width: 100%;
+}
+
+/* Corner neon glows */
+.corner-glow {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-color: var(--accent-gold);
+  border-style: solid;
+  border-width: 0;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.neoncore-card:hover .corner-glow {
+  opacity: 0.6;
+}
+
+.corner-tl {
+  top: 15px;
+  left: 15px;
+  border-top-width: 2px;
+  border-left-width: 2px;
+}
+
+.corner-tr {
+  top: 15px;
+  right: 15px;
+  border-top-width: 2px;
+  border-right-width: 2px;
+}
+
+.corner-bl {
+  bottom: 15px;
+  left: 15px;
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+}
+
+.corner-br {
+  bottom: 15px;
+  right: 15px;
+  border-bottom-width: 2px;
+  border-right-width: 2px;
+}
+
+/* Pagination – glowing rings */
+.works-swiper .swiper-pagination {
+  bottom: 0;
+}
+
+.works-swiper .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: transparent;
+  border: 1px solid var(--accent-gold);
+  opacity: 0.6;
+  margin: 0 6px;
+  transition: all 0.2s;
+  border-radius: 50%;
+}
+
+.works-swiper .swiper-pagination-bullet-active {
+  background: var(--accent-gold);
+  opacity: 1;
+  transform: scale(1.2);
+  box-shadow: 0 0 8px var(--accent-gold);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .neoncore-card {
+    flex-direction: column;
+  }
+  .neoncore-image {
+    min-width: auto;
+    height: 280px;
+  }
+  .corner-glow {
+    display: none;
+  }
+  .glow-underline {
+    display: none;
+  }
+}
+
+@media (max-width: 550px) {
+  .neoncore-image {
+    height: 220px;
+  }
+  .neoncore-content {
+    padding: 1rem;
+  }
+  .neoncore-content h3 {
+    font-size: 1.4rem;
+  }
+  .btn-neoncore, .btn-github {
+    padding: 5px 14px;
+    font-size: 0.7rem;
+  }
+  .password-neoncore {
+    font-size: 0.65rem;
+  }
+  .neoncore-actions {
+
+    gap: 5px;
+
+}
+}

@@ -1,0 +1,14 @@
+/* Footer.css */
+.footer {
+  border-top: 1px solid var(--border-subtle);
+  padding: 40px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  color: var(--text-muted);
+  position: relative;
+  z-index: 2;
+}
+@media (max-width: 800px) { .footer { justify-content: center; } }
+@media (max-width: 550px) { .footer { font-size: 10px; } }
