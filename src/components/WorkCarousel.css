@@ -1,4 +1,4 @@
-/* WorkCarousel.css - Neon Core Edition */
+/* WorkCarousel.css - Neon Core Edition (Full image fill fix) */
 /* Futuristic content side with animated underline, hologram bar, GitHub button */
 
 .works-swiper {
@@ -36,19 +36,19 @@
   border-color: rgba(212,163,115,0.6);
 }
 
-/* Image side – with scanline effect */
+/* Image side – full fill with cover */
 .neoncore-image {
   flex: 1.1;
   min-width: clamp(220px, 30%, 320px);
   position: relative;
   overflow: hidden;
-  background: #000;
+  background: #0a0a0f; /* matches card background */
 }
 
 .neoncore-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Fills container, no black bars */
   display: block;
   transition: filter 0.3s;
 }
@@ -383,14 +383,18 @@
   box-shadow: 0 0 8px var(--accent-gold);
 }
 
-/* Responsive */
+/* Responsive – image fills fully on all screens */
 @media (max-width: 768px) {
   .neoncore-card {
     flex-direction: column;
   }
   .neoncore-image {
+    width: 100%;
     min-width: auto;
-    height: 280px;
+    aspect-ratio: 16 / 9; /* Landscape ratio */
+  }
+  .neoncore-image img {
+    object-fit: cover;
   }
   .corner-glow {
     display: none;
@@ -398,11 +402,14 @@
   .glow-underline {
     display: none;
   }
+  .neoncore-actions {
+    gap: 12px;
+  }
 }
 
 @media (max-width: 550px) {
   .neoncore-image {
-    height: 220px;
+    aspect-ratio: 4 / 3;
   }
   .neoncore-content {
     padding: 1rem;
@@ -418,8 +425,25 @@
     font-size: 0.65rem;
   }
   .neoncore-actions {
-
-    gap: 5px;
-
+    gap: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
+
+@media (max-width: 340px) {
+  .neoncore-image {
+    aspect-ratio: 1 / 1; /* Square for very small screens */
+  }
+  .neoncore-content h3 {
+    font-size: 1.1rem;
+  }
+  .neoncore-tech span {
+    font-size: 0.6rem;
+    padding: 2px 8px;
+  }
+  .btn-neoncore, .btn-github {
+    font-size: 0.65rem;
+    padding: 4px 10px;
+  }
 }

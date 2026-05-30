@@ -1,6 +1,32 @@
 // src/data/projects.js
 
 const projects = [
+
+
+   {
+    title: "BlogApp",
+    badge: "Mernstack",
+    desc: "Created a modern full-stack MERN project with secure user authentication, API-driven architecture, responsive design, and efficient database operations.",
+    tech: [
+      
+  "MongoDB",
+  "Express.js",
+  "React.js",
+  "Node.js",
+  "REST API",
+  "JWT Authentication",
+  "Cloudinory",
+  "Tailwind css",
+  "Mongoose",
+  "Axios",
+  "MVC Architecture",
+  "Vercel Deployment"
+    ],
+    image: "/blogApp.png",
+    link: "https://blogappirf.vercel.app/",
+    label: "Mernstack",
+    github: "https://github.com/irffann-git/blogapp-frontend.git"
+  },
   {
     title: "Ironix",
     badge: "Mernstack",

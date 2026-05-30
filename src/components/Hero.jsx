@@ -21,7 +21,7 @@ const Hero = () => {
         </div>
       </div>
       <div className="hero-image">
-        <div className="hero-gold-tag-1"><i className="fas fa-store-alt"></i> shopify & react developer</div>
+        <div className="hero-gold-tag-1"><i className="fas fa-store-alt"></i> Mernstack & Shopify Developer</div>
         <div className="portrait-luxury"><img src="/irfan1.png" alt="Muhammed Irfan portrait" /></div>
       </div>
     </div>
