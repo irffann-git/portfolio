@@ -6,40 +6,24 @@ import './WorkCarousel.css';
 import projects from '../data/project';
 
 const WorkCarousel = () => {
-  // Guard: if no projects, show nothing or placeholder
-  if (!projects || projects.length === 0) {
-    return <div className="error-message">No projects to display</div>;
-  }
-
-  // Disable loop if only 1 project
-  const enableLoop = projects.length > 1;
-
   return (
-    <section id="work" className="work-section">
+    <section id="work">
       <h2><i className="fas fa-paint-brush"></i> selected works</h2>
       <Swiper
         modules={[Pagination]}
         slidesPerView={1}
-        spaceBetween={20}
-        loop={enableLoop}
+        spaceBetween={30}
+        loop={true}
         speed={700}
-        threshold={8}
-        touchRatio={1.2}
-        resistance={true}
-        resistanceRatio={0.85}
+        pagination={{ clickable: true, dynamicBullets: false }}
         grabCursor={true}
-        pagination={{ clickable: true, dynamicBullets: true }}
-        observer={true}
-        observeParents={true}
         className="works-swiper neoncore-swiper"
-        onSwiper={(swiper) => console.log('Slides count:', swiper.slides.length)}
       >
         {projects.map((project, idx) => (
           <SwiperSlide key={idx}>
             <div className="project-card neoncore-card">
-              {/* your card content - unchanged */}
               <div className="card-art neoncore-image">
-                <img src={project.image} alt={project.title} loading="lazy" />
+                <img src={project.image} alt={project.title} />
                 <span className="art-label neoncore-label">{project.label}</span>
                 <div className="scanline"></div>
               </div>
@@ -70,10 +54,12 @@ const WorkCarousel = () => {
                     </div>
                   )}
                 </div>
+                {/* Futuristic progress bar (decoration) */}
                 <div className="hologram-bar">
                   <div className="hologram-fill"></div>
                 </div>
               </div>
+              {/* Corner neon accents */}
               <div className="corner-glow corner-tl"></div>
               <div className="corner-glow corner-tr"></div>
               <div className="corner-glow corner-bl"></div>
