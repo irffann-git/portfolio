@@ -1,9 +1,8 @@
-/* WorkCarousel.css - Neon Core Edition (Full image fill fix) */
-/* Futuristic content side with animated underline, hologram bar, GitHub button */
+/* WorkCarousel.css - Neon Core Edition (Mobile-Perfected) */
 
 .works-swiper {
   width: 100%;
-  padding: clamp(1rem, 4vw, 2rem) 0 clamp(2rem, 8vw, 4rem);
+  padding: clamp(1rem, 4vw, 2rem) 0 clamp(2.5rem, 10vw, 4rem);
   margin: 1.5rem 0 2rem;
   position: relative;
 }
@@ -15,7 +14,7 @@
   height: auto;
 }
 
-/* Neon Core Card – dark with subtle border pulse */
+/* ── Neon Core Card ── */
 .neoncore-card {
   position: relative;
   display: flex;
@@ -28,27 +27,27 @@
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 25px 40px -20px #000;
-  border: 1px solid rgba(212,163,115,0.2);
+  border: 1px solid rgba(212, 163, 115, 0.2);
   transition: border-color 0.2s;
 }
 
 .neoncore-card:hover {
-  border-color: rgba(212,163,115,0.6);
+  border-color: rgba(212, 163, 115, 0.6);
 }
 
-/* Image side – full fill with cover */
+/* ── Image Side ── */
 .neoncore-image {
   flex: 1.1;
   min-width: clamp(220px, 30%, 320px);
   position: relative;
   overflow: hidden;
-  background: #0a0a0f; /* matches card background */
+  background: #0a0a0f;
 }
 
 .neoncore-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Fills container, no black bars */
+  object-fit: cover;
   display: block;
   transition: filter 0.3s;
 }
@@ -59,7 +58,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(212,163,115,0.15), transparent);
+  background: linear-gradient(90deg, transparent, rgba(212, 163, 115, 0.15), transparent);
   pointer-events: none;
   z-index: 2;
   transition: left 0.5s;
@@ -71,10 +70,10 @@
 
 .neoncore-label {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
+  bottom: 14px;
+  left: 14px;
   font-family: 'Courier New', monospace;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(4px);
   color: var(--accent-gold);
   padding: 4px 14px;
@@ -86,7 +85,7 @@
   border-left: 2px solid var(--accent-gold);
 }
 
-/* CONTENT SIDE – FUTURISTIC FOCUS */
+/* ── Content Side ── */
 .neoncore-content {
   flex: 1;
   padding: clamp(1.2rem, 4vw, 2rem);
@@ -112,7 +111,7 @@
   font-family: 'Playfair Display', serif;
   color: #fff;
   letter-spacing: -0.5px;
-  text-shadow: 0 0 2px rgba(212,163,115,0.3);
+  text-shadow: 0 0 2px rgba(212, 163, 115, 0.3);
 }
 
 .glow-underline {
@@ -129,7 +128,7 @@
   width: 100%;
 }
 
-/* Badge – with blinking cursor effect */
+/* Badge */
 .neoncore-badge {
   color: var(--accent-gold);
   font-weight: 500;
@@ -140,7 +139,7 @@
   display: inline-block;
   width: fit-content;
   padding: 2px 10px;
-  background: rgba(212,163,115,0.1);
+  background: rgba(212, 163, 115, 0.1);
   border-radius: 20px;
   backdrop-filter: blur(4px);
 }
@@ -156,37 +155,36 @@
   50% { opacity: 0; }
 }
 
-/* Description text – with glitch effect on hover */
+/* Description */
 .neoncore-desc {
   color: var(--text-soft);
-  line-height: 1.5;
+  line-height: 1.55;
   margin-bottom: 1rem;
   transition: all 0.2s;
 }
 
 .neoncore-card:hover .neoncore-desc {
-  text-shadow: 0 0 1px rgba(212,163,115,0.3);
+  text-shadow: 0 0 1px rgba(212, 163, 115, 0.3);
 }
 
-/* Tech tags – futuristic capsules */
+/* Tech Tags */
 .neoncore-tech {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
   margin: 1rem 0 1.5rem;
 }
 
 .neoncore-tech span {
-  background: rgba(20,20,30,0.8);
+  background: rgba(20, 20, 30, 0.8);
   backdrop-filter: blur(4px);
   padding: 4px 14px;
   border-radius: 40px;
   font-size: 0.75rem;
   font-family: 'Courier New', monospace;
   color: #b1b1cf;
-  border: 1px solid rgba(212,163,115,0.2);
+  border: 1px solid rgba(212, 163, 115, 0.2);
   transition: all 0.2s;
-  position: relative;
 }
 
 .neoncore-tech span:hover {
@@ -195,11 +193,11 @@
   transform: translateY(-1px);
 }
 
-/* Action buttons – EXPLORE + GITHUB */
+/* Action Buttons */
 .neoncore-actions {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 12px;
   flex-wrap: wrap;
   margin: 5px 0 10px;
 }
@@ -220,6 +218,7 @@
   transition: all 0.2s;
   position: relative;
   overflow: hidden;
+  white-space: nowrap;
 }
 
 .btn-neoncore span {
@@ -234,7 +233,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(212,163,115,0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(212, 163, 115, 0.3), transparent);
   transition: left 0.3s;
 }
 
@@ -248,7 +247,7 @@
   gap: 14px;
 }
 
-/* GitHub button – specific style */
+/* GitHub Button */
 .btn-github {
   display: inline-flex;
   align-items: center;
@@ -261,7 +260,8 @@
   font-size: 0.8rem;
   font-weight: 500;
   transition: all 0.2s;
-  border: 1px solid rgba(212,163,115,0.3);
+  border: 1px solid rgba(212, 163, 115, 0.3);
+  white-space: nowrap;
 }
 
 .btn-github i {
@@ -280,8 +280,9 @@
   color: #0f0f14;
 }
 
+/* Password Badge */
 .password-neoncore {
-  background: rgba(212,163,115,0.08);
+  background: rgba(212, 163, 115, 0.08);
   padding: 5px 14px;
   border-radius: 40px;
   font-size: 0.7rem;
@@ -290,15 +291,16 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  border: 1px dashed rgba(212,163,115,0.4);
+  border: 1px dashed rgba(212, 163, 115, 0.4);
+  white-space: nowrap;
 }
 
-/* Hologram progress bar (decorative) */
+/* Hologram Bar */
 .hologram-bar {
   margin-top: 15px;
   width: 100%;
   height: 2px;
-  background: rgba(212,163,115,0.1);
+  background: rgba(212, 163, 115, 0.1);
   border-radius: 2px;
   overflow: hidden;
 }
@@ -314,7 +316,7 @@
   width: 100%;
 }
 
-/* Corner neon glows */
+/* Corner Glows */
 .corner-glow {
   position: absolute;
   width: 30px;
@@ -332,35 +334,12 @@
   opacity: 0.6;
 }
 
-.corner-tl {
-  top: 15px;
-  left: 15px;
-  border-top-width: 2px;
-  border-left-width: 2px;
-}
+.corner-tl { top: 15px; left: 15px; border-top-width: 2px; border-left-width: 2px; }
+.corner-tr { top: 15px; right: 15px; border-top-width: 2px; border-right-width: 2px; }
+.corner-bl { bottom: 15px; left: 15px; border-bottom-width: 2px; border-left-width: 2px; }
+.corner-br { bottom: 15px; right: 15px; border-bottom-width: 2px; border-right-width: 2px; }
 
-.corner-tr {
-  top: 15px;
-  right: 15px;
-  border-top-width: 2px;
-  border-right-width: 2px;
-}
-
-.corner-bl {
-  bottom: 15px;
-  left: 15px;
-  border-bottom-width: 2px;
-  border-left-width: 2px;
-}
-
-.corner-br {
-  bottom: 15px;
-  right: 15px;
-  border-bottom-width: 2px;
-  border-right-width: 2px;
-}
-
-/* Pagination – glowing rings */
+/* Pagination */
 .works-swiper .swiper-pagination {
   bottom: 0;
 }
@@ -383,66 +362,251 @@
   box-shadow: 0 0 8px var(--accent-gold);
 }
 
-/* Responsive – image fills fully on all screens */
+/* ════════════════════════════════════════
+   RESPONSIVE — TABLET  (≤ 900px)
+   ════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .neoncore-card {
+    max-width: 95vw;
+  }
+
+  .neoncore-content h3 {
+    font-size: clamp(1.3rem, 4vw, 1.8rem);
+  }
+}
+
+/* ════════════════════════════════════════
+   RESPONSIVE — MOBILE  (≤ 768px)
+   ════════════════════════════════════════ */
 @media (max-width: 768px) {
+  .works-swiper {
+    padding-bottom: clamp(2.5rem, 10vw, 4rem);
+    margin: 1rem 0 1.5rem;
+  }
+
   .neoncore-card {
     flex-direction: column;
+    max-width: 100%;
+    border-radius: 16px;
   }
+
+  /* Image stacks on top, fills width at 16:9 */
   .neoncore-image {
     width: 100%;
-    min-width: auto;
-    aspect-ratio: 16 / 9; /* Landscape ratio */
+    min-width: unset;
+    min-height: 180px;
+    aspect-ratio: 16 / 9;
+    flex: none;
   }
+
   .neoncore-image img {
     object-fit: cover;
+    object-position: center top;
   }
+
+  /* Label slightly smaller on mobile */
+  .neoncore-label {
+    bottom: 10px;
+    left: 10px;
+    font-size: 0.65rem;
+    padding: 3px 10px;
+  }
+
+  /* Content area */
+  .neoncore-content {
+    padding: 1rem 1rem 1.2rem;
+  }
+
+  .neoncore-content h3 {
+    font-size: 1.35rem;
+    letter-spacing: -0.3px;
+  }
+
+  .neoncore-badge {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    margin: 0.6rem 0 0.8rem;
+  }
+
+  .neoncore-desc {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    margin-bottom: 0.8rem;
+  }
+
+  .neoncore-tech {
+    gap: 6px;
+    margin: 0.7rem 0 1rem;
+  }
+
+  .neoncore-tech span {
+    font-size: 0.7rem;
+    padding: 3px 10px;
+  }
+
+  /* Actions side by side on tablet-mobile */
+  .neoncore-actions {
+    gap: 10px;
+    margin: 4px 0 8px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .btn-neoncore {
+    padding: 7px 16px;
+    font-size: 0.75rem;
+    gap: 8px;
+  }
+
+  .btn-github {
+    padding: 7px 14px;
+    font-size: 0.75rem;
+  }
+
+  .password-neoncore {
+    font-size: 0.68rem;
+    padding: 4px 12px;
+  }
+
+  /* Hide decorative elements that don't render well stacked */
   .corner-glow {
     display: none;
   }
+
   .glow-underline {
     display: none;
   }
-  .neoncore-actions {
-    gap: 12px;
+
+  .hologram-bar {
+    margin-top: 10px;
   }
 }
 
+/* ════════════════════════════════════════
+   RESPONSIVE — SMALL MOBILE  (≤ 550px)
+   ════════════════════════════════════════ */
 @media (max-width: 550px) {
+  .neoncore-card {
+    border-radius: 14px;
+  }
+
   .neoncore-image {
     aspect-ratio: 4 / 3;
+    min-height: 160px;
   }
+
   .neoncore-content {
-    padding: 1rem;
+    padding: 0.9rem 0.9rem 1rem;
   }
+
   .neoncore-content h3 {
-    font-size: 1.4rem;
+    font-size: 1.25rem;
   }
-  .btn-neoncore, .btn-github {
-    padding: 5px 14px;
-    font-size: 0.7rem;
+
+  .neoncore-desc {
+    font-size: 0.85rem;
   }
-  .password-neoncore {
-    font-size: 0.65rem;
-  }
+
+  /* Stack buttons vertically, left-aligned, not full-width */
   .neoncore-actions {
-    gap: 10px;
     flex-direction: column;
     align-items: flex-start;
+    gap: 8px;
+  }
+
+  .btn-neoncore,
+  .btn-github {
+    padding: 6px 14px;
+    font-size: 0.72rem;
+    width: fit-content;
+  }
+
+  .password-neoncore {
+    font-size: 0.65rem;
+    padding: 4px 10px;
+  }
+
+  .neoncore-tech span {
+    font-size: 0.68rem;
+    padding: 3px 9px;
   }
 }
 
-@media (max-width: 340px) {
+/* ════════════════════════════════════════
+   RESPONSIVE — TINY  (≤ 400px)
+   ════════════════════════════════════════ */
+@media (max-width: 400px) {
+  .neoncore-card {
+    border-radius: 12px;
+  }
+
   .neoncore-image {
-    aspect-ratio: 1 / 1; /* Square for very small screens */
+    aspect-ratio: 4 / 3;
+    min-height: 140px;
   }
+
+  .neoncore-content {
+    padding: 0.8rem 0.8rem 0.9rem;
+  }
+
   .neoncore-content h3 {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
   }
-  .neoncore-tech span {
+
+  .neoncore-badge {
     font-size: 0.6rem;
+    letter-spacing: 1.5px;
+  }
+
+  .neoncore-desc {
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  .neoncore-tech {
+    gap: 5px;
+  }
+
+  .neoncore-tech span {
+    font-size: 0.62rem;
     padding: 2px 8px;
   }
-  .btn-neoncore, .btn-github {
+
+  .btn-neoncore,
+  .btn-github {
+    font-size: 0.68rem;
+    padding: 5px 12px;
+  }
+
+  .password-neoncore {
+    font-size: 0.6rem;
+  }
+}
+
+/* ════════════════════════════════════════
+   RESPONSIVE — ULTRA-TINY  (≤ 340px)
+   ════════════════════════════════════════ */
+@media (max-width: 340px) {
+  .neoncore-image {
+    aspect-ratio: 1 / 1;
+    min-height: 120px;
+  }
+
+  .neoncore-content h3 {
+    font-size: 1.05rem;
+  }
+
+  .neoncore-desc {
+    font-size: 0.78rem;
+  }
+
+  .neoncore-tech span {
+    font-size: 0.58rem;
+    padding: 2px 7px;
+  }
+
+  .btn-neoncore,
+  .btn-github {
     font-size: 0.65rem;
     padding: 4px 10px;
   }

@@ -22,48 +22,87 @@ const WorkCarousel = () => {
         {projects.map((project, idx) => (
           <SwiperSlide key={idx}>
             <div className="project-card neoncore-card">
+
+              {/* ── Image Side ── */}
               <div className="card-art neoncore-image">
-                <img src={project.image} alt={project.title} />
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  loading="lazy"
+                />
                 <span className="art-label neoncore-label">{project.label}</span>
                 <div className="scanline"></div>
               </div>
+
+              {/* ── Content Side ── */}
               <div className="project-content neoncore-content">
+
+                {/* Title + animated underline */}
                 <div className="content-header">
                   <h3>{project.title}</h3>
                   <div className="glow-underline"></div>
                 </div>
+
+                {/* Badge */}
                 <div className="project-badge neoncore-badge">{project.badge}</div>
+
+                {/* Description */}
                 <p className="neoncore-desc">{project.desc}</p>
+
+                {/* Tech stack tags */}
                 <div className="project-tech neoncore-tech">
-                  {project.tech.map(t => <span key={t}>{t}</span>)}
+                  {project.tech.map((t) => (
+                    <span key={t}>{t}</span>
+                  ))}
                 </div>
+
+                {/* Action buttons */}
                 <div className="card-actions neoncore-actions">
-                  <a href={project.link} className="btn-neoncore" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={project.link}
+                    className="btn-neoncore"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Explore ${project.title}`}
+                  >
                     <span>EXPLORE</span>
-                    <i className="fas fa-arrow-right"></i>
+                    <i className="fas fa-arrow-right" aria-hidden="true"></i>
                   </a>
+
                   {project.github && (
-                    <a href={project.github} className="btn-github" target="_blank" rel="noopener noreferrer">
-                      <i className="fab fa-github"></i>
+                    <a
+                      href={project.github}
+                      className="btn-github"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`View ${project.title} source code on GitHub`}
+                    >
+                      <i className="fab fa-github" aria-hidden="true"></i>
                       <span>CODE</span>
                     </a>
                   )}
+
                   {project.password && (
                     <div className="password-neoncore">
-                      <i className="fas fa-lock"></i> {project.password}
+                      <i className="fas fa-lock" aria-hidden="true"></i>
+                      {project.password}
                     </div>
                   )}
                 </div>
-                {/* Futuristic progress bar (decoration) */}
+
+                {/* Futuristic progress bar (decorative) */}
                 <div className="hologram-bar">
                   <div className="hologram-fill"></div>
                 </div>
+
               </div>
-              {/* Corner neon accents */}
-              <div className="corner-glow corner-tl"></div>
-              <div className="corner-glow corner-tr"></div>
-              <div className="corner-glow corner-bl"></div>
-              <div className="corner-glow corner-br"></div>
+
+              {/* Corner neon accents (hidden on mobile via CSS) */}
+              <div className="corner-glow corner-tl" aria-hidden="true"></div>
+              <div className="corner-glow corner-tr" aria-hidden="true"></div>
+              <div className="corner-glow corner-bl" aria-hidden="true"></div>
+              <div className="corner-glow corner-br" aria-hidden="true"></div>
+
             </div>
           </SwiperSlide>
         ))}
