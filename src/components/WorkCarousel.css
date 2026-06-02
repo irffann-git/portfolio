@@ -323,13 +323,16 @@
 .btn-luxe {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   background: var(--accent-gold, #d4a373);
   color: #0a0a0f;
-  padding: clamp(6px, 1.5vw, 9px) clamp(14px, 3vw, 22px);
+  /* min 44px tap height on all devices */
+  min-height: 44px;
+  padding: 10px 24px;
   border-radius: 40px;
   text-decoration: none;
-  font-size: clamp(0.68rem, 1.6vw, 0.8rem);
+  font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
@@ -338,6 +341,9 @@
   white-space: nowrap;
   position: relative;
   overflow: hidden;
+  /* removes any default button/a tap highlight on mobile */
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 .btn-luxe:hover {
@@ -346,26 +352,36 @@
   background: #e8b980;
 }
 
+.btn-luxe:active {
+  transform: scale(0.97);
+  box-shadow: none;
+}
+
 .btn-gh-luxe {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   background: rgba(10, 10, 20, 0.8);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   color: #fff;
-  padding: clamp(6px, 1.5vw, 9px) clamp(12px, 2.5vw, 18px);
+  /* min 44px tap height on all devices */
+  min-height: 44px;
+  padding: 10px 20px;
   border-radius: 40px;
   text-decoration: none;
-  font-size: clamp(0.68rem, 1.6vw, 0.8rem);
+  font-size: 0.82rem;
   font-weight: 500;
   border: 1px solid rgba(212, 163, 115, 0.4);
   transition: all 0.25s ease;
   white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 .btn-gh-luxe i {
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: var(--accent-gold, #d4a373);
   transition: color 0.2s;
 }
@@ -376,15 +392,21 @@
   transform: translateY(-2px);
 }
 
+.btn-gh-luxe:active {
+  transform: scale(0.97);
+}
+
 .password-luxe {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   background: rgba(212, 163, 115, 0.08);
   color: var(--accent-gold, #d4a373);
-  padding: 5px 14px;
+  /* min 44px tap height */
+  min-height: 44px;
+  padding: 10px 16px;
   border-radius: 30px;
-  font-size: clamp(0.6rem, 1.4vw, 0.7rem);
+  font-size: 0.72rem;
   font-family: monospace;
   border: 1px dashed rgba(212, 163, 115, 0.4);
   white-space: nowrap;
@@ -483,7 +505,7 @@
     border-radius: 16px;
   }
 
-  /* Always visible on mobile */
+  /* Always visible on mobile — no hover needed */
   .luxe-desc { max-height: 120px; opacity: 1; transform: translateY(0); }
   .luxe-tech { opacity: 1; transform: translateY(0); }
   .luxe-actions { opacity: 1; transform: translateY(0); }
@@ -492,10 +514,39 @@
     background: linear-gradient(
       to top,
       rgba(5, 5, 10, 0.98) 0%,
-      rgba(5, 5, 10, 0.8) 50%,
+      rgba(5, 5, 10, 0.82) 52%,
       rgba(5, 5, 10, 0.3) 80%,
       transparent 100%
     );
+  }
+
+  /* Buttons — solid 44px tap targets, row layout, readable font */
+  .luxe-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .btn-luxe {
+    min-height: 44px;
+    padding: 10px 22px;
+    font-size: 0.78rem;
+    letter-spacing: 1.2px;
+    width: fit-content;
+  }
+
+  .btn-gh-luxe {
+    min-height: 44px;
+    padding: 10px 18px;
+    font-size: 0.78rem;
+    width: fit-content;
+  }
+
+  .password-luxe {
+    min-height: 44px;
+    padding: 10px 16px;
+    font-size: 0.7rem;
   }
 
   .luxe-card:hover .luxe-image img { transform: none; }
@@ -509,10 +560,38 @@
   .luxe-title { font-size: 1.3rem; }
   .luxe-desc { font-size: 0.8rem; max-height: 80px; }
   .luxe-tech span { font-size: 0.62rem; padding: 2px 9px; }
-  .luxe-actions { flex-direction: column; align-items: flex-start; gap: 8px; }
-  .btn-luxe, .btn-gh-luxe { font-size: 0.7rem; padding: 6px 14px; width: fit-content; }
-  .password-luxe { font-size: 0.62rem; }
   .luxe-index { font-size: 2rem; }
+
+  /* Buttons — row wraps naturally if no space, each still 44px tall */
+  .luxe-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-luxe {
+    min-height: 44px;
+    padding: 10px 18px;
+    font-size: 0.74rem;
+    letter-spacing: 1px;
+    width: fit-content;
+    flex-shrink: 0;
+  }
+
+  .btn-gh-luxe {
+    min-height: 44px;
+    padding: 10px 16px;
+    font-size: 0.74rem;
+    width: fit-content;
+    flex-shrink: 0;
+  }
+
+  .password-luxe {
+    min-height: 44px;
+    padding: 10px 14px;
+    font-size: 0.68rem;
+  }
 }
 
 @media (max-width: 400px) {
@@ -520,14 +599,70 @@
   .luxe-title { font-size: 1.15rem; }
   .luxe-desc { font-size: 0.76rem; max-height: 72px; }
   .luxe-tech span { font-size: 0.58rem; padding: 2px 8px; }
-  .btn-luxe, .btn-gh-luxe { font-size: 0.66rem; padding: 5px 12px; }
+
+  /* Stack vertically on very small phones — each button full readable width */
+  .luxe-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .btn-luxe {
+    min-height: 44px;
+    padding: 10px 18px;
+    font-size: 0.74rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .btn-gh-luxe {
+    min-height: 44px;
+    padding: 10px 18px;
+    font-size: 0.74rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .password-luxe {
+    min-height: 44px;
+    padding: 10px 14px;
+    font-size: 0.68rem;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 340px) {
   .luxe-title { font-size: 1.05rem; }
   .luxe-desc { display: none; }
   .luxe-tech { display: none; }
-  .btn-luxe, .btn-gh-luxe { font-size: 0.62rem; padding: 5px 10px; }
+
+  .luxe-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+  }
+
+  .btn-luxe {
+    min-height: 44px;
+    padding: 10px 14px;
+    font-size: 0.7rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .btn-gh-luxe {
+    min-height: 44px;
+    padding: 10px 14px;
+    font-size: 0.7rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .password-luxe {
+    min-height: 44px;
+    font-size: 0.66rem;
+    justify-content: center;
+  }
 }
 
 /* Disable 3D tilt on touch devices */
@@ -542,9 +677,28 @@
     background: linear-gradient(
       to top,
       rgba(5, 5, 10, 0.98) 0%,
-      rgba(5, 5, 10, 0.8) 50%,
+      rgba(5, 5, 10, 0.82) 52%,
       rgba(5, 5, 10, 0.3) 80%,
       transparent 100%
     );
+  }
+
+  /* Guarantee 44px tap targets on every touch screen */
+  .btn-luxe,
+  .btn-gh-luxe,
+  .password-luxe {
+    min-height: 44px;
+  }
+
+  /* Active press feedback instead of hover */
+  .btn-luxe:active {
+    transform: scale(0.96);
+    box-shadow: none;
+    background: #c89060;
+  }
+
+  .btn-gh-luxe:active {
+    transform: scale(0.96);
+    background: rgba(212, 163, 115, 0.2);
   }
 }
