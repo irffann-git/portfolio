@@ -21,7 +21,7 @@ const projects = [
   ],
   image: "/ase_trading.png",
   link: "https://ase-trading.vercel.app/",
-  label: "Frontend",
+  label: "Mernstack",
   github: "https://github.com/irffann-git/ASETrading.git"
 },
 
