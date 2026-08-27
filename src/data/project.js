@@ -3,6 +3,53 @@
 const projects = [
 
 
+
+  {
+  title: "ASE Trading",
+  badge: "React.js",
+  desc: "Designed and developed a modern corporate website for ASE Trading with a professional dark navy visual identity, responsive layouts, structured company information, services, projects, partners, clients, and contact sections. Built reusable React components with a clean and scalable frontend architecture.",
+  tech: [
+    "React.js",
+    "JavaScript",
+    "Tailwind CSS",
+    "React Router",
+    "Responsive Design",
+    "Reusable Components",
+    "Modern UI/UX",
+    "CSS Animations",
+    "Vercel Deployment"
+  ],
+  image: "/ase_trading.png",
+  link: "https://ase-trading.vercel.app/",
+  label: "Frontend",
+  github: "https://github.com/irffann-git/ASETrading.git"
+},
+
+  {
+  title: "Storyn",
+  badge: "Mernstack",
+  desc: "Developed a production-ready full-stack book discovery platform featuring JWT authentication, REST APIs, category-based browsing, ratings, responsive UI, Redux state management, and MongoDB integration.",
+  tech: [
+    "MongoDB",
+    "Express.js",
+    "React.js",
+    "Node.js",
+    "REST API",
+    "JWT Authentication",
+    "Redux Toolkit",
+    "Tailwind CSS",
+    "Mongoose",
+    "Axios",
+    "Swiper.js",
+    "MVC Architecture",
+    "Vercel Deployment"
+  ],
+  image: "/storyn.png",
+  link: "https://storyn-kappa.vercel.app/",
+  label: "Mernstack",
+  github: "https://github.com/irffann-git/storyn.git"
+},
+
    {
     title: "BlogApp",
     badge: "Mernstack",

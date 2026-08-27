@@ -38,7 +38,7 @@ const WorkCarousel = () => {
                   {project.tech.map(t => <span key={t}>{t}</span>)}
                 </div>
                 <div className="card-actions neoncore-actions">
-                  <a href={project.link} className="btn-neoncore" target="_blank" rel="noopener noreferrer">
+                <a href={project.link} className="btn-neoncore" target="_blank" rel="noopener noreferrer">
                     <span>EXPLORE</span>
                     <i className="fas fa-arrow-right"></i>
                   </a>
