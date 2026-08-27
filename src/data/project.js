@@ -6,7 +6,7 @@ const projects = [
 
   {
   title: "ASE Trading",
-  badge: "React.js",
+  badge: "Mernstack",
   desc: "Designed and developed a modern corporate website for ASE Trading with a professional dark navy visual identity, responsive layouts, structured company information, services, projects, partners, clients, and contact sections. Built reusable React components with a clean and scalable frontend architecture.",
   tech: [
     "React.js",
